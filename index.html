@@ -3,35 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ular Tangga Bareng Ayang</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Anggun Celluler - Pencatatan Keuangan</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="marquee-container">
-        <div class="marquee-text">
-            <span>Yang kalah harus mandi 6 kali sehari gaboleh pake sabun!</span>
-            <span>Yang kalah harus mandi 6 kali sehari gaboleh pake sabun!</span>
-            <span>Yang kalah harus mandi 6 kali sehari gaboleh pake sabun!</span>
-        </div>
-    </div>
+    <div class="container">
+        <h1>Anggun Celluler 📱</h1>
+        <p>Formulir Pencatatan Transaksi</p>
+        <form id="financeForm">
 
-    <div class="game-container">
-        <h1>Ular Tangga Bucin</h1>
-        <div class="game-board">
+            <label for="jenisTransaksi">Jenis Transaksi</label>
+            <select id="jenisTransaksi" name="jenisTransaksi" required>
+                <option value="" disabled selected>Pilih Jenis Transaksi</option>
+                <option value="Tarik Tunai">Tarik Tunai</option>
+                <option value="Transfer">Transfer</option>
+                <option value="TOP UP E-Wallet">TOP UP E-Wallet</option>
+                <option value="Pulsa">Pulsa</option>
+                <option value="Token Listruk">Token Listruk</option>
+                <option value="Tagihan Listrik">Tagihan Listrik</option>
+                <option value="Lainnya">Lainnya</option>
+            </select>
+
+            <div id="eWalletGroup" class="hidden">
+                <label for="jenisEwallet">Jenis E-Wallet</label>
+                <select id="jenisEwallet" name="jenisEwallet">
+                    <option value="" disabled selected>Pilih E-Wallet</option>
+                    <option value="Dana">Dana</option>
+                    <option value="Shopepay">ShopeePay</option>
+                    <option value="Gopay">GoPay</option>
+                    <option value="OVO">OVO</option>
+                    <option value="Link Aja">Link Aja</option>
+                </select>
             </div>
-        <div class="controls">
-            <p id="player-turn">Giliran: Pemain 1</p>
-            <button id="roll-dice">Lempar Dadu!</button>
-            <p id="dice-result"></p>
-        </div>
+
+            <label for="jumlahTransaksi">Jumlah Transaksi (Rp)</label>
+            <input type="number" id="jumlahTransaksi" name="jumlahTransaksi" min="0" required placeholder="Contoh: 100000">
+
+            <label for="jumlahDiterimaAgen">Jumlah Diterima Agen (Rp)</label>
+            <input type="number" id="jumlahDiterimaAgen" name="jumlahDiterimaAgen" min="0" required placeholder="Contoh: 105000">
+
+            <label for="nomorCustomer">Nomor Rekening / No. HP / Nama Customer</label>
+            <input type="text" id="nomorCustomer" name="nomorCustomer" required placeholder="Cth: 0812xxxxxx / Bpk. Adi">
+
+            <label for="statusPembayaran">Status Pembayaran</label>
+            <select id="statusPembayaran" name="statusPembayaran" required>
+                <option value="Lunas">Lunas</option>
+                <option value="Terhutang">Terhutang</option>
+            </select>
+            
+            <div id="terhutangGroup" class="hidden">
+                <label for="nominalTerhutang">Nominal Terhutang (Rp)</label>
+                <input type="number" id="nominalTerhutang" name="nominalTerhutang" min="0" placeholder="Masukkan jumlah yang terhutang">
+            </div>
+
+            <button type="submit" id="inputButton">INPUT DATA</button>
+            <div id="statusMessage" class="status-message"></div>
+
+        </form>
     </div>
 
-    <div id="popup" class="popup-container">
-        <div class="popup-box">
-            <span class="close-btn">&times;</span>
-            <div id="popup-content"></div>
-        </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
