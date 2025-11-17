@@ -24,9 +24,18 @@
                 <option value="Lainnya">Lainnya</option>
             </select>
 
+            <div id="jalurGroup" class="hidden">
+                <label for="jalurTransaksi">Jalur Transaksi</label>
+                <select id="jalurTransaksi" name="jalurTransaksi" class="colorful-dropdown">
+                    <option value="" disabled selected>Pilih Jalur</option>
+                    <option value="EDC">EDC</option>
+                    <option value="QRIS">QRIS</option>
+                </select>
+            </div>
+
             <div id="eWalletGroup" class="hidden">
                 <label for="jenisEwallet">Jenis E-Wallet</label>
-                <select id="jenisEwallet" name="jenisEwallet">
+                <select id="jenisEwallet" name="jenisEwallet" class="colorful-dropdown">
                     <option value="" disabled selected>Pilih E-Wallet</option>
                     <option value="Dana">Dana</option>
                     <option value="Shopepay">ShopeePay</option>
@@ -35,6 +44,9 @@
                     <option value="Link Aja">Link Aja</option>
                 </select>
             </div>
+
+            <label for="modalTransaksi">Modal Transaksi (Rp)</label>
+            <input type="number" id="modalTransaksi" name="modalTransaksi" min="0" required placeholder="Masukkan nominal modal">
 
             <label for="jumlahTransaksi">Jumlah Transaksi (Rp)</label>
             <input type="number" id="jumlahTransaksi" name="jumlahTransaksi" min="0" required placeholder="Contoh: 100000">
@@ -59,6 +71,10 @@
             <button type="submit" id="inputButton">INPUT DATA</button>
             <div id="statusMessage" class="status-message"></div>
 
+            <div class="system-footer-inside-form">
+                system by : PT Dwi Karya Inovasi Teknologi
+            </div>
+            
         </form>
     </div>
 
